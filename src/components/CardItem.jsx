@@ -29,11 +29,11 @@ const CardItem = () => {
             culpa voluptas nam alias voluptatem aperiam doloribus eos!
           </Card.Text>
           <Card.Text>
-            Prioridad: <span className="prioridad-alta">Example</span>
+            Prioridad: <span className="prioridad-alta">Alta</span>
           </Card.Text>
           <div className="d-flex justify-content-center pb-3">
-            <Button className="mx-2">Editar</Button>
-            <Button className="mx-2">Borrar</Button>
+            <Button className="mx-2 btn-azul">Editar</Button>
+            <Button className="mx-2 btn-azul">Borrar</Button>
           </div>
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between text-creation text-muted text-center bg-azul-claro">
