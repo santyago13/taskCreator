@@ -37,8 +37,10 @@ const CardItem = () => {
           </div>
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between text-creation text-muted text-center bg-azul-claro">
-          <Card.Text>Fecha de creación: 12/12/2022</Card.Text>
-          <Card.Text>Fecha de ultima edición: 12/12/2022</Card.Text>
+          <div className="d-flex">
+            <Button className="mx-2 btn-azul">Editar</Button>
+            <Button className="mx-2 btn-azul">Borrar</Button>
+          </div>
         </Card.Footer>
       </Card>
     </Col>

@@ -3,26 +3,17 @@ class ClassCard {
   #descripcion;
   #estado;
   #prioridad;
-  #id;
-  #fechaCreacion;
-  #fechaEdicion;
 
   constructor(
     nombre,
     descripcion,
     estado,
     prioridad,
-    id,
-    fechaCreacion,
-    fechaEdicion
   ) {
     this.#nombre = nombre;
     this.#descripcion = descripcion;
     this.#estado = estado;
     this.#prioridad = prioridad;
-    this.#id = crypto.randomUUID();
-    this.#fechaCreacion = fechaCreacion;
-    this.#fechaEdicion = fechaEdicion;
   }
 
   // Getters
@@ -42,18 +33,6 @@ class ClassCard {
     return this.#prioridad;
   }
 
-  get id() {
-    return this.#id;
-  }
-
-  get fechaCreacion() {
-    return this.#fechaCreacion;
-  }
-
-  get fechaEdicion() {
-    return this.#fechaEdicion;
-  }
-
   // Setters
   set nombre(nuevoNombre) {
     this.#nombre = nuevoNombre;
@@ -71,9 +50,7 @@ class ClassCard {
     this.#prioridad = nuevaPrioridad;
   }
 
-  set fechaEdicion(nuevaFechaEdicion) {
-    this.#fechaEdicion = nuevaFechaEdicion;
-  }
+
 
   toJSON() {
     return {
@@ -81,9 +58,8 @@ class ClassCard {
       descripcion: this.#descripcion,
       estado: this.#estado,
       prioridad: this.#prioridad,
-      id: this.#id,
-      fechaCreacion: this.#fechaCreacion,
-      fechaEdicion: this.#fechaEdicion,
     };
   }
 }
+
+export default ClassCard;
