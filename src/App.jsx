@@ -7,7 +7,7 @@ function App() {
       <header>
         <Navbarr />
       </header>
-      <main>
+      <main className="bg-azul">
         <AddTask />
       </main>
     </>

@@ -1,0 +1,57 @@
+.separador {
+  display: block;
+  padding: 20px;
+}
+
+.form-tamanio {
+  width: 100%;
+  height: 100%;
+}
+
+.card-pad {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.text-creation {
+  font-size: 10px;
+}
+
+.bg-azul {
+  background-color: #001233;
+}
+
+.bg-azul-claro {
+  background-color: #001845;
+}
+
+.btn-azul {
+  background-color: #023e7d;
+  border-color: #001233;
+}
+
+.prioridad-baja {
+  color: greenyellow;
+}
+.prioridad-media {
+  color: yellow;
+}
+.prioridad-alta {
+  color: red;
+}
+
+@media (min-width: 1200px) {
+  .separador {
+    display: flex;
+  }
+  .form-tamanio {
+    width: 25%;
+  }
+  .card-pad {
+    margin-top: 0px;
+    text-align: left;
+  }
+  .text-creation {
+    font-size: 16px;
+  }
+}
