@@ -1,9 +1,17 @@
+import AddTask from "./components/AddTask";
+import Navbarr from "./components/Navbar";
+
 function App() {
   return (
-    <main>
-      <h1>hola</h1>
-    </main>
-  )
+    <>
+      <header>
+        <Navbarr />
+      </header>
+      <main>
+        <AddTask />
+      </main>
+    </>
+  );
 }
 
-export default App
+export default App;
