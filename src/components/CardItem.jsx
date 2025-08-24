@@ -39,10 +39,12 @@ const CardItem = ({ propTarea, borrarTarea }) => {
           </Form.Select>
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between text-creation text-muted text-center bg-azul-claro">
-          <div className="d-flex">
-            <Button className="mx-2 btn-azul">Editar</Button>
-            <Button className="mx-2 btn-azul" onClick={()=>borrarTarea(propTarea)}>Borrar</Button>
-          </div>
+          <Button
+            className="mx-2 btn-azul w-100"
+            onClick={() => borrarTarea(propTarea)}
+          >
+            Borrar
+          </Button>
         </Card.Footer>
       </Card>
     </Col>
