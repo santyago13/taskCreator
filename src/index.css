@@ -1,9 +1,9 @@
-#root{
+#root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
- 
+
 main {
   flex-grow: 1;
 }
@@ -19,6 +19,7 @@ main {
 }
 
 .card-pad {
+  margin-right: 15px;
   margin-top: 20px;
   text-align: center;
 }
@@ -50,8 +51,9 @@ main {
   color: red;
 }
 
-.card-item{
-  width: 100%;
+.card-item {
+  display: flex;
+  width: 95%;
 }
 
 @media (min-width: 1200px) {
@@ -68,7 +70,7 @@ main {
   .text-creation {
     font-size: 16px;
   }
-  .card-item{
+  .card-item {
     min-width: 400px;
   }
 }
