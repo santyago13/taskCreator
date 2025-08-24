@@ -58,4 +58,7 @@
   .text-creation {
     font-size: 16px;
   }
+  .card-item{
+    min-width: 400px;
+  }
 }
