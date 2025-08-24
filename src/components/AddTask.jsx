@@ -76,6 +76,8 @@ const AddTask = () => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Nombre de la tarea</Form.Label>
             <Form.Control
+              minLength={3}
+              maxLength={25}
               value={nombre}
               onChange={(data) => setNombre(data.target.value)}
               className="bg-azul-claro"
@@ -118,6 +120,8 @@ const AddTask = () => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Descripcion de la tarea</Form.Label>
             <Form.Control
+              minLength={3}
+              maxLength={150}
               value={descripcion}
               onChange={(data) => setDescripcion(data.target.value)}
               className="bg-azul-claro"

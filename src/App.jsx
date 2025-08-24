@@ -1,5 +1,6 @@
 import AddTask from "./components/AddTask";
 import Navbarr from "./components/Navbar";
+import FooterTask from "./components/FooterTask";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       <main className="bg-azul">
         <AddTask />
       </main>
+      <footer>
+        <FooterTask/>
+      </footer>
     </>
   );
 }
