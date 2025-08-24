@@ -14,14 +14,8 @@ const AddTask = () => {
   const crearTarea = (data) => {
     data.preventDefault();
     // crear un nuevo objeto tarea con todos los datos
-    const tareaNueva = new ClassCard(
-      nombre,
-      estado,
-      descripcion,
-      prioridad,
-    );
+    const tareaNueva = new ClassCard(nombre, estado, prioridad, descripcion);
     setTarea([...tarea, tareaNueva]);
-    console.log(tareaNueva);
     // limpiar inputs
     setNombre("");
     setEstado("");
@@ -100,7 +94,7 @@ const AddTask = () => {
         </Form>
       </div>
       <div className="ms-4">
-        <CardSystem />
+        <CardSystem propTarea={tarea} />
       </div>
     </div>
   );

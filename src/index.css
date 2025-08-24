@@ -40,6 +40,10 @@
   color: red;
 }
 
+.card-item{
+  width: 100%;
+}
+
 @media (min-width: 1200px) {
   .separador {
     display: flex;

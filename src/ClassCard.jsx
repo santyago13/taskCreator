@@ -6,9 +6,9 @@ class ClassCard {
 
   constructor(
     nombre,
-    descripcion,
     estado,
     prioridad,
+    descripcion
   ) {
     this.#nombre = nombre;
     this.#descripcion = descripcion;
