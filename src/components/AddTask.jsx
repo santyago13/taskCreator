@@ -1,8 +1,9 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import CardSystem from "./CardSystem";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ClassCard from "../ClassCard";
+import Swal from "sweetalert2";
 
 const AddTask = () => {
   const tareasLocalStorage = JSON.parse(localStorage.getItem("tareaKey")) || [];
@@ -22,12 +23,46 @@ const AddTask = () => {
     setEstado("");
     setDescripcion("");
     setPrioridad("");
+    //alerta
+    Swal.fire({
+      background: "#001233",
+      color: "#ffffff",
+      confirmButtonColor: "#023e7d",
+      title: "Se creo correctamente",
+      icon: "success",
+      draggable: true,
+    });
   };
 
   const borrarTarea = (nombreTarea) => {
-    const tareaFiltrada = tarea.filter(
-      (itemTarea) => itemTarea !== nombreTarea);
-      setTarea(tareaFiltrada);
+    Swal.fire({
+      title: "¿Estas seguro que quieres borrar la tarea?",
+      text: "No puedes deshacer esto!",
+      icon: "warning",
+      iconColor: "#d33",
+      showCancelButton: true,
+      background: "#001233",
+      color: "#ffffff",
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#023e7d",
+      confirmButtonText: "Si, borrarlo!",
+      cancelButtonText: "No, cancelar!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const tareaFiltrada = tarea.filter(
+          (itemTarea) => itemTarea !== nombreTarea
+        );
+        setTarea(tareaFiltrada);
+        Swal.fire({
+          background: "#001233",
+          color: "#ffffff",
+          title: "Tarea borrada",
+          text: "Tu tarea se borro del registro",
+          icon: "success",
+          confirmButtonColor: "#023e7d",
+        });
+      }
+    });
   };
 
   useEffect(() => {
