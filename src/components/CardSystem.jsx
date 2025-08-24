@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import CardItem from "./CardItem";
 
-const CardSystem = ({ propTarea }) => {
+const CardSystem = ({ propTarea, borrarTarea }) => {
   // hacer que si no hay ninguna tarea mostrar un mensaje
   if (propTarea.length === 0) {
     return (
@@ -17,7 +17,11 @@ const CardSystem = ({ propTarea }) => {
       <Container>
         <Row className="row-gap-3">
           {propTarea.map((tarea, indice) => (
-            <CardItem key={indice} propTarea={tarea} />
+            <CardItem
+              key={indice}
+              propTarea={tarea}
+              borrarTarea={borrarTarea}
+            />
           ))}
         </Row>
       </Container>

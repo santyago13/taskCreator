@@ -1,11 +1,12 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import CardSystem from "./CardSystem";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import ClassCard from "../ClassCard";
 
 const AddTask = () => {
-  const [tarea, setTarea] = useState([]);
+  const tareasLocalStorage = JSON.parse(localStorage.getItem("tareaKey")) || [];
+  const [tarea, setTarea] = useState(tareasLocalStorage);
   const [nombre, setNombre] = useState("");
   const [estado, setEstado] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -22,6 +23,16 @@ const AddTask = () => {
     setDescripcion("");
     setPrioridad("");
   };
+
+  const borrarTarea = (nombreTarea) => {
+    const tareaFiltrada = tarea.filter(
+      (itemTarea) => itemTarea !== nombreTarea);
+      setTarea(tareaFiltrada);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("tareaKey", JSON.stringify(tarea));
+  }, [tarea]);
 
   return (
     <div className="separador">
@@ -94,7 +105,7 @@ const AddTask = () => {
         </Form>
       </div>
       <div className="ms-4">
-        <CardSystem propTarea={tarea} />
+        <CardSystem propTarea={tarea} borrarTarea={borrarTarea} />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 
-const CardItem = ({ propTarea }) => {
+const CardItem = ({ propTarea, borrarTarea }) => {
   const colorPrioridad = () => {
     switch (propTarea.prioridad) {
       case "Baja":
@@ -41,7 +41,7 @@ const CardItem = ({ propTarea }) => {
         <Card.Footer className="d-flex justify-content-between text-creation text-muted text-center bg-azul-claro">
           <div className="d-flex">
             <Button className="mx-2 btn-azul">Editar</Button>
-            <Button className="mx-2 btn-azul">Borrar</Button>
+            <Button className="mx-2 btn-azul" onClick={()=>borrarTarea(propTarea)}>Borrar</Button>
           </div>
         </Card.Footer>
       </Card>
